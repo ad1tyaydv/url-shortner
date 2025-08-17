@@ -30,14 +30,14 @@ export default function UrlShortener() {
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded shadow-md w-full max-w-md"
       >
-        <h1 className="text-xl font-semibold mb-4 text-center">URL Shortener</h1>
+        <h1 className="text-xl text-black font-semibold mb-4 text-center">URL Shortener</h1>
 
         <input
           type="text"
           value={longUrl}
           onChange={(e) => setLongUrl(e.target.value)}
           placeholder="Enter long URL"
-          className="w-full px-4 py-2 border rounded mb-4"
+          className="w-full px-4 py-2 border text-black rounded mb-4"
           required
         />
 
@@ -51,7 +51,7 @@ export default function UrlShortener() {
 
         {shortUrl && (
           <div className="mt-4 text-center">
-            <p className="text-sm text-gray-600">Your short URL:</p>
+            <p className="text-sm text-black">Your short URL:</p>
             <a
               href={shortUrl}
               target="_blank"

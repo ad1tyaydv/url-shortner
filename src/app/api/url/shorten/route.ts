@@ -15,12 +15,12 @@ export async function POST(req: Request) {
 
     await connect()
 
-    const shortCode = generateShortCode();
+    const shortUrl = generateShortCode();
 
-    const newUrl = new Url({ shortCode, longUrl});
+    const newUrl = new Url({ shortUrl, longUrl});
     await newUrl.save();
 
     return NextResponse.json({
-        shortUrl: `${process.env.PUBLIC_BASE_URL}/${shortCode}`
+        shortUrl: `${process.env.PUBLIC_BASE_URL}/${shortUrl}`
     });
 }
