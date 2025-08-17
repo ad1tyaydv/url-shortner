@@ -15,7 +15,7 @@ export default function UrlShortener() {
 
     setLoading(true);
     try {
-      const res = await axios.post("/api/shorten", { longUrl });
+      const res = await axios.post("/api/url/shorten", { longUrl });
       setShortUrl(res.data.shortUrl);
     } catch (err) {
       alert("Error generating short URL");

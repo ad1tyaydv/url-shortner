@@ -1,4 +1,4 @@
-import mongoose, { connection } from "mongoose";
+import mongoose from "mongoose";
 
 export async function connect() {
 
@@ -7,11 +7,11 @@ export async function connect() {
 
         const isConnected = mongoose.connection;
 
-        connection.on('connected', () => {
+        isConnected.on('connected', () => {
             console.log("MongoDB connected successfully");
         })
 
-        connection.on('error', (err) => {
+        isConnected.on('error', (err) => {
             console.log("Error while connecting to MongoDB", err);
             process.exit();
         })

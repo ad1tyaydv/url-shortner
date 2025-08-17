@@ -7,6 +7,8 @@ const urlSchema = new mongoose.Schema({
     },
     shortUrl: {
         type: String,
+        required: true,
+        unique: true
     },
     createdAt: {
         type: Date,
@@ -14,6 +16,6 @@ const urlSchema = new mongoose.Schema({
     }
 })
 
-const Url = mongoose.models.url || mongoose.model("url", urlSchema);
+const Url = mongoose.models.Url || mongoose.model("Url", urlSchema);
 
 export default Url;

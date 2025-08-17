@@ -4,11 +4,11 @@ import { redirect } from "next/navigation";
 export default async function Page({params}: {params: {shortUrl: string}}) {
     try {
         const res = await axios.post(
-            `${process.env.PUBLIC_BASE_URL}/api/resolve`,
+            `${process.env.PUBLIC_BASE_URL}/api/url/resolve`,
             {shortUrl: params.shortUrl},
             {
                 headers: {
-                    "Content Type": "application/json",
+                    "Content-Type": "application/json"
                 },
             }
         );
